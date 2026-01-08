@@ -1,163 +1,68 @@
-/* General Body & Typography */
 body {
-    font-family: 'Roboto', sans-serif; /* Modern, readable font */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #0d0d0d; /* Deep charcoal for dramatic contrast */
-    color: #f0f0f0; /* Soft white for readability */
+    background-color: #0d0d0d;
+    color: #f0f0f0;
     line-height: 1.6;
-    scroll-behavior: smooth;
-    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Headings and Titles - Playfair Display for elegance */
-h1, h2, h3 {
+h1, h2 {
     font-family: 'Playfair Display', serif;
-    color: #e0ac40; /* Golden hue for theatrical luxury */
+    color: #e0ac40;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-/* Header - The Grand Overture */
 .stage-header {
-    background-color: #1a1a1a; /* Darker charcoal */
-    padding: 60px 20px;
-    text-align: center;
-    border-bottom: 2px solid #e0ac40;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    position: relative;
-    overflow: hidden;
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-bottom: 3px solid #e0ac40;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
-.title-act {
-    font-size: 3.5em;
-    margin: 0;
-    letter-spacing: 2px;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
-}
-
-.subtitle-scene {
-    font-size: 1.5em;
-    color: #b0b0b0;
-    margin-top: 10px;
-}
-
-/* Main Stage - The Scenes */
 .main-stage {
-    max-width: 900px;
+    max-width: 800px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .scene {
-    background-color: #1a1a1a; /* Dark panel for each scene */
-    border: 1px solid #333;
-    border-radius: 8px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
     padding: 40px;
     margin-bottom: 30px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    transition: all 0.5s ease-in-out;
-    position: relative;
+    border: 1px solid #333;
+    transition: opacity 0.5s ease;
 }
 
-.scene-title {
-    font-size: 2.5em;
-    color: #f0f0f0; /* White for scene titles */
-    margin-top: 0;
-}
-
-.dialogue {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    font-style: italic;
-    color: #d0d0d0; /* Slightly muted white for dialogue */
-}
-
-.dialogue.source {
-    font-size: 0.9em;
-    font-style: normal;
-    color: #888;
-    margin-top: -10px;
-    margin-bottom: 30px;
-}
-
-/* Action Buttons - Call to Action */
-.action-button {
-    background-color: #e0ac40; /* Golden button */
-    color: #1a1a1a; /* Dark text on button */
-    padding: 15px 30px;
-    border: none;
+.cipher-box {
+    background: #000;
+    color: #00ff00;
+    padding: 15px;
+    font-family: monospace;
     border-radius: 5px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin: 20px 0;
 }
 
-.action-button:hover {
-    background-color: #c79536; /* Darker gold on hover */
-    transform: translateY(-2px);
-}
-
-/* Character Spotlight (Interactive Element) */
-.character-spotlight {
-    background-color: #2a2a2a; /* Slightly lighter dark for interactive elements */
-    color: #e0ac40;
-    border: 1px solid #e0ac40;
-    padding: 15px 20px;
-    margin: 20px auto;
-    width: fit-content;
-    cursor: pointer;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 10px rgba(224, 172, 64, 0.3);
-}
-
-.character-spotlight:hover {
+.action-button {
     background-color: #e0ac40;
-    color: #1a1a1a;
-    box-shadow: 0 0 20px rgba(224, 172, 64, 0.6);
+    color: #111;
+    padding: 12px 24px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
-/* Hidden Class for JavaScript Toggle */
-.hidden {
-    display: none;
-    opacity: 0;
-    transform: translateY(20px);
+.character-spotlight {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    border: 1px solid #e0ac40;
+    color: #e0ac40;
+    cursor: pointer;
+    border-radius: 20px;
 }
 
-/* Footer - The Final Bow */
-.stage-footer {
-    background-color: #1a1a1a;
-    padding: 30px 20px;
-    text-align: center;
-    color: #b0b0b0;
-    font-size: 0.9em;
-    border-top: 2px solid #e0ac40;
-    margin-top: 50px;
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
-}
+.hidden { display: none; }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .title-act {
-        font-size: 2.5em;
-    }
-    .subtitle-scene {
-        font-size: 1.2em;
-    }
-    .scene-title {
-        font-size: 2em;
-    }
-    .dialogue {
-        font-size: 1em;
-    }
-    .action-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-}
+#feedback { margin-top: 10px; font-weight: bold; }

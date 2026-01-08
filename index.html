@@ -9,44 +9,55 @@
 </head>
 <body>
     <header class="stage-header">
-        <h1 class="title-act">The Grand Overture</h1>
-        <p class="subtitle-scene">A spectacle awaits your gaze.</p>
+        <h1 class="title-act">The Cypher of Avon</h1>
+        <p class="subtitle-scene">A spectacle of logic and drama</p>
     </header>
 
     <main class="main-stage">
         <section id="prologue" class="scene">
-            <h2 class="scene-title">Act I: The Prologue's Whisper</h2>
-            <p class="dialogue">"All the world's a stage, and all the men and women merely players; they have their exits and their entrances; and one man in his time plays many parts..."</p>
-            <p class="dialogue source">- William Shakespeare, *As You Like It*</p>
-            <button class="action-button" data-target="act1">Enter the Scene</button>
+            <h2 class="scene-title">Act I: The Star-Crossed Scroll</h2>
+            <p class="dialogue">"A messenger leaves a scroll 'thirteen times cursed'. It reads:"</p>
+            <div class="cipher-box">YAZ{Gb_or_be_abg_gb_or_onfu}</div>
+            <p class="dialogue source">Hint: Rotate the wheel to find the truth.</p>
+            <button class="action-button" data-target="act1">Enter the Palace</button>
         </section>
 
         <section id="act1" class="scene hidden">
-            <h2 class="scene-title">Act II: The Rising Conflict</h2>
-            <p class="dialogue">"To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune..."</p>
-            <p class="dialogue source">- William Shakespeare, *Hamlet*</p>
-            <div class="character-spotlight" data-character="hamlet">Hamlet's Monologue</div>
-            <button class="action-button" data-target="act2">Advance the Plot</button>
+            <h2 class="scene-title">Act II: The Sentinel’s Logic</h2>
+            <p class="dialogue">The Gatekeeper demands a 'Universal Truth' to pass.</p>
+            <div class="login-sim">
+                <input type="text" placeholder="Username (Admin?)" id="gatekeeper-user">
+                <input type="password" placeholder="Password" disabled>
+                <div class="character-spotlight" data-character="gatekeeper">Speak to Gatekeeper</div>
+            </div>
+            <button class="action-button" data-target="act2">Advance to the Gallery</button>
         </section>
 
         <section id="act2" class="scene hidden">
-            <h2 class="scene-title">Act III: Climax and Revelation</h2>
-            <p class="dialogue">"What's in a name? That which we call a rose By any other word would smell as sweet..."</p>
-            <p class="dialogue source">- William Shakespeare, *Romeo and Juliet*</p>
-            <div class="character-spotlight" data-character="juliet">Juliet's Lament</div>
-            <button class="action-button" data-target="epilogue">Witness the Resolution</button>
+            <h2 class="scene-title">Act III: The Stained Portrait</h2>
+            <p class="dialogue">Lady Portia's portrait hangs here. Hidden within its invisible traits lies the key.</p>
+            <div class="portrait-frame">
+                <div class="character-spotlight" data-character="portia">Inspect Portrait Metadata</div>
+            </div>
+            <button class="action-button" data-target="epilogue">The Alchemist's Lab</button>
         </section>
 
         <section id="epilogue" class="scene hidden">
-            <h2 class="scene-title">Epilogue: The Final Bow</h2>
-            <p class="dialogue">"Our revels now are ended. These our actors, As I foretold you, were all spirits, and Are melted into air, into thin air..."</p>
-            <p class="dialogue source">- William Shakespeare, *The Tempest*</p>
-            <button class="action-button" onclick="window.location.reload();">Curtain Call! (Reload)</button>
+            <h2 class="scene-title">Act IV: The Alchemist’s Vigor</h2>
+            <p class="dialogue">The final brew is complex. To read the secret, one must deconstruct the potion's soul.</p>
+            <div class="character-spotlight" data-character="alchemist">Examine Binary Potion</div>
+            <hr>
+            <div class="flag-validator">
+                <h3>Submit Final Flag</h3>
+                <input type="text" id="flagInput" placeholder="LNM{...}">
+                <button class="action-button" onclick="checkFlag()">Verify Flag</button>
+                <p id="feedback"></p>
+            </div>
         </section>
     </main>
 
     <footer class="stage-footer">
-        <p>&copy; 2023 CurtainCall Productions. All Rights Reserved.</p>
+        <p>&copy; 2026 CurtainCall Productions | LNM Challenge Series</p>
     </footer>
 
     <script src="js/script.js"></script>

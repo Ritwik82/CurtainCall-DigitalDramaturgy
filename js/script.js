@@ -1,44 +1,51 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Select all action buttons
-    const actionButtons = document.querySelectorAll('.action-button');
-    // Select all character spotlight elements
-    const characterSpotlights = document.querySelectorAll('.character-spotlight');
+    const buttons = document.querySelectorAll('.action-button[data-target]');
+    const spotlights = document.querySelectorAll('.character-spotlight');
 
-    // Function to show a scene
-    const showScene = (sceneId) => {
-        // Hide all scenes first
-        document.querySelectorAll('.scene').forEach(scene => {
-            scene.classList.add('hidden');
+    // Scene Navigation
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const targetId = btn.getAttribute('data-target');
+            document.querySelectorAll('.scene').forEach(s => s.classList.add('hidden'));
+            document.getElementById(targetId).classList.remove('hidden');
         });
+    });
 
-        // Show the target scene
-        const targetScene = document.getElementById(sceneId);
-        if (targetScene) {
-            targetScene.classList.remove('hidden');
-            // Optional: Scroll to the new scene for better UX
-            targetScene.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    };
-
-    // Event listener for action buttons
-    actionButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const targetSceneId = event.target.dataset.target;
-            if (targetSceneId) {
-                showScene(targetSceneId);
+    // Spotlight Secrets (Hints and Flags)
+    spotlights.forEach(spot => {
+        spot.addEventListener('click', () => {
+            const char = spot.getAttribute('data-character');
+            
+            if (char === 'gatekeeper') {
+                const user = document.getElementById('gatekeeper-user').value;
+                if (user.includes("' OR 1=1")) {
+                    alert("The Gatekeeper trembles! 'Logic accepted. Take this: LNM{gatekeeper_logic_error}'");
+                } else {
+                    alert("The Gatekeeper scoffs: 'That is not a universal truth.'");
+                }
+            }
+            
+            if (char === 'portia') {
+                alert("You peer into the image data... hidden in the Artist tag: LNM{portrait_metadata_found}");
+            }
+            
+            if (char === 'alchemist') {
+                alert("Deep within the strings of the potion: LNM{binary_potion_dissolved}");
             }
         });
     });
-
-    // Event listener for character spotlights (for a fun interactive effect)
-    characterSpotlights.forEach(spotlight => {
-        spotlight.addEventListener('click', (event) => {
-            const characterName = event.target.dataset.character;
-            alert(`Ah, a soliloquy from the noble ${characterName}!`);
-            // You could expand this to show a modal with more text or an animation
-        });
-    });
-
-    // Initially show the prologue scene
-    showScene('prologue');
 });
+
+// Final Flag Validator
+function checkFlag() {
+    const input = document.getElementById('flagInput').value;
+    const feedback = document.getElementById('feedback');
+    
+    if (input === "LNM{binary_potion_dissolved}") {
+        feedback.innerText = "The Final Curtain Falls! You have saved the Kingdom.";
+        feedback.style.color = "#e0ac40";
+    } else {
+        feedback.innerText = "The Alchemist frowns. That flag is incorrect.";
+        feedback.style.color = "#ff4d4d";
+    }
+}
