@@ -2,36 +2,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.action-button[data-target]');
     const spotlights = document.querySelectorAll('.character-spotlight');
 
-    // Navigation Logic
+    // Navigation Logic: Managing the flow of the Acts
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             const targetId = btn.getAttribute('data-target');
             document.querySelectorAll('.scene').forEach(s => s.classList.add('hidden'));
-            document.getElementById(targetId).classList.remove('hidden');
+            const nextScene = document.getElementById(targetId);
+            nextScene.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     });
 
-    // Interaction Logic (Hints and direct flags removed)
+    // Interaction Logic: The subtle hints of the play
     spotlights.forEach(spot => {
         spot.addEventListener('click', () => {
             const char = spot.getAttribute('data-character');
             
             if (char === 'gatekeeper') {
                 const user = document.getElementById('gatekeeper-user').value;
-                // Only shows a response if the specific SQLi pattern is used
                 if (user.includes("' OR 1=1")) {
-                    alert("The Sentinel bows his head. 'The path is clear. Proceed, Noble Scrivener.'");
+                    alert("The Sentinel's eyes glow with a dim light. 'The Tautology... the logic that cannot be broken. You may pass into the archives, Scrivener.'");
                 } else {
-                    alert("The Sentinel remains motionless. 'Your words hold no weight here.'");
+                    alert("The Sentinel remains a statue. 'Your identity is tied to a specific form. I require a truth that is universal.'");
                 }
             }
             
             if (char === 'portia') {
-                alert("The portrait is masterfully crafted. Perhaps a closer inspection of the file itself would reveal more than the eye can see.");
+                alert("The canvas feels heavy. You suspect that if you were to 'examine' the file's metadata, you would find a 'comment' left by the artist.");
             }
             
             if (char === 'alchemist') {
-                alert("The liquid shimmer. It requires a scholar who can read the very strings of existence.");
+                alert("The potion is a compiled mystery. Only one who can read the 'strings' of a binary soul will find what is hidden in its code.");
             }
         });
     });
@@ -42,12 +43,12 @@ function checkFlag() {
     const input = document.getElementById('flagInput').value;
     const feedback = document.getElementById('feedback');
     
-    // The solution is now hidden here in the logic
     if (input === "LNM{binary_potion_dissolved}") {
-        feedback.innerText = "The Final Curtain Falls! You have mastered the Digital Dramaturgy.";
+        feedback.innerText = "The applause thunders through the hall! You have decoded the drama and saved the realm.";
         feedback.style.color = "#e0ac40";
+        feedback.style.fontSize = "1.2em";
     } else {
-        feedback.innerText = "Alas, the stage remains silent. The truth eludes you.";
+        feedback.innerText = "Alas! The stage remains shrouded in shadow. That revelation is not the one we seek.";
         feedback.style.color = "#ff4d4d";
     }
 }
