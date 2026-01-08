@@ -1,4 +1,6 @@
 🎭 CurtainCall: A Digital Dramaturgy
+
+
 CurtainCall is a narrative-driven CTF experience where the world of cybersecurity meets the dramatic flair of a Shakespearean tragedy. The kingdom's defensive enchantments have been twisted into poetic riddles, and you must progress through the scenes of a fragmented play to reclaim the "Golden Flags".
 
 📖 The Story of the Play
@@ -16,5 +18,6 @@ Rules of Engagement
 Sequential Progression: Acts are locked; you cannot proceed to the next scene until the current riddle is solved.
 
 Flag Format: All discovered secrets must be submitted in the format LNM{...}.
+
 
 Interaction: Use the Action Buttons and Character Spotlights on the webpage to trigger dialogue cues and advance the script.
