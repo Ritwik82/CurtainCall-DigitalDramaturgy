@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurtainCall: A Digital Dramaturgy</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="stage-header">
+        <h1 class="title-act">The Grand Overture</h1>
+        <p class="subtitle-scene">A spectacle awaits your gaze.</p>
+    </header>
+
+    <main class="main-stage">
+        <section id="prologue" class="scene">
+            <h2 class="scene-title">Act I: The Prologue's Whisper</h2>
+            <p class="dialogue">"All the world's a stage, and all the men and women merely players; they have their exits and their entrances; and one man in his time plays many parts..."</p>
+            <p class="dialogue source">- William Shakespeare, *As You Like It*</p>
+            <button class="action-button" data-target="act1">Enter the Scene</button>
+        </section>
+
+        <section id="act1" class="scene hidden">
+            <h2 class="scene-title">Act II: The Rising Conflict</h2>
+            <p class="dialogue">"To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune..."</p>
+            <p class="dialogue source">- William Shakespeare, *Hamlet*</p>
+            <div class="character-spotlight" data-character="hamlet">Hamlet's Monologue</div>
+            <button class="action-button" data-target="act2">Advance the Plot</button>
+        </section>
+
+        <section id="act2" class="scene hidden">
+            <h2 class="scene-title">Act III: Climax and Revelation</h2>
+            <p class="dialogue">"What's in a name? That which we call a rose By any other word would smell as sweet..."</p>
+            <p class="dialogue source">- William Shakespeare, *Romeo and Juliet*</p>
+            <div class="character-spotlight" data-character="juliet">Juliet's Lament</div>
+            <button class="action-button" data-target="epilogue">Witness the Resolution</button>
+        </section>
+
+        <section id="epilogue" class="scene hidden">
+            <h2 class="scene-title">Epilogue: The Final Bow</h2>
+            <p class="dialogue">"Our revels now are ended. These our actors, As I foretold you, were all spirits, and Are melted into air, into thin air..."</p>
+            <p class="dialogue source">- William Shakespeare, *The Tempest*</p>
+            <button class="action-button" onclick="window.location.reload();">Curtain Call! (Reload)</button>
+        </section>
+    </main>
+
+    <footer class="stage-footer">
+        <p>&copy; 2023 CurtainCall Productions. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
