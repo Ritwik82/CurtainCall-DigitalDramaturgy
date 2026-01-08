@@ -9,55 +9,54 @@
 </head>
 <body>
     <header class="stage-header">
-        <h1 class="title-act">The Cypher of Avon</h1>
-        <p class="subtitle-scene">A spectacle of logic and drama</p>
+        <h1 class="title-act">CurtainCall: A Digital Dramaturgy</h1>
+        <p class="subtitle-scene">The stage is set. The secrets are yours to find.</p>
     </header>
 
     <main class="main-stage">
         <section id="prologue" class="scene">
             <h2 class="scene-title">Act I: The Star-Crossed Scroll</h2>
-            <p class="dialogue">"A messenger leaves a scroll 'thirteen times cursed'. It reads:"</p>
+            <p class="dialogue">"A messenger departs, leaving only a scrap of parchment behind. It bears a curious inscription:"</p>
             <div class="cipher-box">YAZ{Gb_or_be_abg_gb_or_onfu}</div>
-            <p class="dialogue source">Hint: Rotate the wheel to find the truth.</p>
-            <button class="action-button" data-target="act1">Enter the Palace</button>
+            <button class="action-button" data-target="act1">Proceed Backstage</button>
         </section>
 
         <section id="act1" class="scene hidden">
             <h2 class="scene-title">Act II: The Sentinel’s Logic</h2>
-            <p class="dialogue">The Gatekeeper demands a 'Universal Truth' to pass.</p>
+            <p class="dialogue">"The massive iron doors of the archive are barred. A single sentinel stands guard, refusing entry to any who cannot speak the 'Truth'."</p>
             <div class="login-sim">
-                <input type="text" placeholder="Username (Admin?)" id="gatekeeper-user">
-                <input type="password" placeholder="Password" disabled>
-                <div class="character-spotlight" data-character="gatekeeper">Speak to Gatekeeper</div>
+                <input type="text" placeholder="Identity..." id="gatekeeper-user">
+                <input type="password" placeholder="Passphrase" disabled>
+                <div class="character-spotlight" data-character="gatekeeper">Challenge the Sentinel</div>
             </div>
-            <button class="action-button" data-target="act2">Advance to the Gallery</button>
+            <button class="action-button" data-target="act2">Enter the Gallery</button>
         </section>
 
         <section id="act2" class="scene hidden">
             <h2 class="scene-title">Act III: The Stained Portrait</h2>
-            <p class="dialogue">Lady Portia's portrait hangs here. Hidden within its invisible traits lies the key.</p>
+            <p class="dialogue">"Lady Portia's eyes seem to follow you across the room. Legend says her secrets were not painted *on* the canvas, but woven *into* it."</p>
             <div class="portrait-frame">
-                <div class="character-spotlight" data-character="portia">Inspect Portrait Metadata</div>
+                <div class="character-spotlight" data-character="portia">Examine the Artistry</div>
             </div>
             <button class="action-button" data-target="epilogue">The Alchemist's Lab</button>
         </section>
 
         <section id="epilogue" class="scene hidden">
             <h2 class="scene-title">Act IV: The Alchemist’s Vigor</h2>
-            <p class="dialogue">The final brew is complex. To read the secret, one must deconstruct the potion's soul.</p>
-            <div class="character-spotlight" data-character="alchemist">Examine Binary Potion</div>
+            <p class="dialogue">"A bubbling cauldron sits over a low flame. The final essence is locked within. To see it, one must look where the eye cannot reach."</p>
+            <div class="character-spotlight" data-character="alchemist">Peer into the Cauldron</div>
             <hr>
             <div class="flag-validator">
-                <h3>Submit Final Flag</h3>
+                <h3>Submit the Final Revelation</h3>
                 <input type="text" id="flagInput" placeholder="LNM{...}">
-                <button class="action-button" onclick="checkFlag()">Verify Flag</button>
+                <button class="action-button" onclick="checkFlag()">Confirm Truth</button>
                 <p id="feedback"></p>
             </div>
         </section>
     </main>
 
     <footer class="stage-footer">
-        <p>&copy; 2026 CurtainCall Productions | LNM Challenge Series</p>
+        <p>&copy; 2026 CurtainCall Productions | Digital Dramaturgy Series</p>
     </footer>
 
     <script src="js/script.js"></script>

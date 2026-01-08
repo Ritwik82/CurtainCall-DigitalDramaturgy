@@ -14,9 +14,9 @@ h1, h2 {
 
 .stage-header {
     background-color: #1a1a1a;
-    padding: 40px;
+    padding: 50px 20px;
     border-bottom: 3px solid #e0ac40;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    text-align: center;
 }
 
 .main-stage {
@@ -27,42 +27,51 @@ h1, h2 {
 
 .scene {
     background-color: #1a1a1a;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 40px;
     margin-bottom: 30px;
     border: 1px solid #333;
-    transition: opacity 0.5s ease;
+    text-align: center;
 }
 
 .cipher-box {
     background: #000;
-    color: #00ff00;
-    padding: 15px;
-    font-family: monospace;
-    border-radius: 5px;
+    color: #e0ac40;
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+    border: 1px dashed #e0ac40;
     margin: 20px 0;
+    letter-spacing: 2px;
 }
 
 .action-button {
     background-color: #e0ac40;
     color: #111;
-    padding: 12px 24px;
+    padding: 12px 28px;
     border: none;
     font-weight: bold;
     cursor: pointer;
-    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.action-button:hover {
+    background-color: #fff;
 }
 
 .character-spotlight {
     display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
+    margin: 15px;
+    padding: 12px 25px;
     border: 1px solid #e0ac40;
     color: #e0ac40;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.character-spotlight:hover {
+    background: rgba(224, 172, 64, 0.1);
 }
 
 .hidden { display: none; }
-
-#feedback { margin-top: 10px; font-weight: bold; }
+#feedback { margin-top: 15px; }

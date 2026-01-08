@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('.action-button[data-target]');
     const spotlights = document.querySelectorAll('.character-spotlight');
 
-    // Scene Navigation
+    // Navigation Logic
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             const targetId = btn.getAttribute('data-target');
@@ -11,41 +11,43 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Spotlight Secrets (Hints and Flags)
+    // Interaction Logic (Hints and direct flags removed)
     spotlights.forEach(spot => {
         spot.addEventListener('click', () => {
             const char = spot.getAttribute('data-character');
             
             if (char === 'gatekeeper') {
                 const user = document.getElementById('gatekeeper-user').value;
+                // Only shows a response if the specific SQLi pattern is used
                 if (user.includes("' OR 1=1")) {
-                    alert("The Gatekeeper trembles! 'Logic accepted. Take this: LNM{gatekeeper_logic_error}'");
+                    alert("The Sentinel bows his head. 'The path is clear. Proceed, Noble Scrivener.'");
                 } else {
-                    alert("The Gatekeeper scoffs: 'That is not a universal truth.'");
+                    alert("The Sentinel remains motionless. 'Your words hold no weight here.'");
                 }
             }
             
             if (char === 'portia') {
-                alert("You peer into the image data... hidden in the Artist tag: LNM{portrait_metadata_found}");
+                alert("The portrait is masterfully crafted. Perhaps a closer inspection of the file itself would reveal more than the eye can see.");
             }
             
             if (char === 'alchemist') {
-                alert("Deep within the strings of the potion: LNM{binary_potion_dissolved}");
+                alert("The liquid shimmer. It requires a scholar who can read the very strings of existence.");
             }
         });
     });
 });
 
-// Final Flag Validator
+// Final Validation Logic
 function checkFlag() {
     const input = document.getElementById('flagInput').value;
     const feedback = document.getElementById('feedback');
     
+    // The solution is now hidden here in the logic
     if (input === "LNM{binary_potion_dissolved}") {
-        feedback.innerText = "The Final Curtain Falls! You have saved the Kingdom.";
+        feedback.innerText = "The Final Curtain Falls! You have mastered the Digital Dramaturgy.";
         feedback.style.color = "#e0ac40";
     } else {
-        feedback.innerText = "The Alchemist frowns. That flag is incorrect.";
+        feedback.innerText = "Alas, the stage remains silent. The truth eludes you.";
         feedback.style.color = "#ff4d4d";
     }
 }
