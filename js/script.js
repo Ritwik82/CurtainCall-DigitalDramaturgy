@@ -30,11 +30,12 @@ function solveAct2() {
 // Act III: Metadata
 function solveAct3() {
     const val = document.getElementById('input-act3').value.trim();
+    // Challenger must decode the Base64 they found to get this string:
     if (val === "LNM{portrait_metadata_found}") {
         alert("The portrait shifts! A passage is revealed.");
         document.getElementById('next-act3').classList.remove('hidden');
     } else {
-        alert("The art reveals nothing to you.");
+        alert("The art reveals nothing... perhaps the inscription is in a different tongue?");
     }
 }
 
@@ -49,4 +50,4 @@ function checkFlag() {
         feedback.innerText = "That is not the final truth.";
         feedback.style.color = "red";
     }
-}
+}   
