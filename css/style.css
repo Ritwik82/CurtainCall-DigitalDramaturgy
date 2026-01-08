@@ -1,26 +1,9 @@
-/* --- THEATRICAL SCENIC DESIGN --- */
-
-/* Basic Reset & Stage Foundation */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #0d0d0d !important; /* Forces deep black background */
+    background-color: #0d0d0d !important;
     color: #f0f0f0;
+    margin: 0;
     line-height: 1.6;
-    overflow-x: hidden;
-}
-
-/* Headings: The Golden Playbill Style */
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    color: #e0ac40;
-    text-align: center;
-    letter-spacing: 1px;
 }
 
 .stage-header {
@@ -28,131 +11,80 @@ h1, h2, h3 {
     padding: 60px 20px;
     border-bottom: 4px solid #e0ac40;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.title-act {
-    font-size: 3rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: #e0ac40;
 }
 
-.subtitle-scene {
-    font-style: italic;
-    color: #888;
-}
-
-/* Main Stage Container */
 .main-stage {
-    max-width: 900px;
-    margin: 50px auto;
+    max-width: 800px;
+    margin: 40px auto;
     padding: 20px;
 }
 
-/* Scene Panels */
 .scene {
     background-color: #1a1a1a;
+    padding: 40px;
     border-radius: 12px;
-    padding: 50px;
-    margin-bottom: 40px;
     border: 1px solid #333;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.8s ease-in-out;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-/* The Dialogue Text */
 .dialogue {
-    font-size: 1.15rem;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: justify;
-    color: #d1d1d1;
+    color: #ccc;
 }
 
-.source {
-    display: block;
-    font-size: 0.9rem;
-    color: #e0ac40;
-    margin-top: -10px;
-    text-align: right;
-    font-style: italic;
-}
-
-/* The Cipher Box (Act I) */
 .cipher-box {
     background: #000;
     color: #e0ac40;
-    padding: 25px;
-    font-family: 'Courier New', monospace;
+    padding: 20px;
+    font-family: monospace;
     border: 1px dashed #e0ac40;
-    margin: 30px 0;
-    font-size: 1.3rem;
-    text-align: center;
-    letter-spacing: 4px;
-    box-shadow: inset 0 0 10px rgba(224, 172, 64, 0.2);
+    margin: 20px 0;
+    font-size: 1.2rem;
 }
 
-/* Interactive Elements */
 .action-button {
     background-color: #e0ac40;
-    color: #0d0d0d;
-    padding: 15px 35px;
+    color: #111;
+    padding: 12px 25px;
     border: none;
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    display: block;
-    margin: 20px auto;
+    margin-top: 10px;
 }
 
-.action-button:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.05);
+.next-btn {
+    background-color: #fff;
+    margin-top: 20px;
 }
 
 .character-spotlight {
     display: inline-block;
-    margin: 20px 10px;
-    padding: 12px 25px;
-    border: 2px solid #e0ac40;
+    padding: 10px 20px;
+    border: 1px solid #e0ac40;
     color: #e0ac40;
     background: transparent;
     cursor: pointer;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: 0.3s;
+    margin: 10px;
 }
 
-.character-spotlight:hover {
-    background: #e0ac40;
-    color: #0d0d0d;
-    box-shadow: 0 0 15px rgba(224, 172, 64, 0.5);
+input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    background: #222;
+    border: 1px solid #444;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
-/* Logic for Hidden Scenes (The Curtain) */
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
+.hidden { display: none !important; }
 
-/* Footer: The Final Bow */
-.stage-footer {
-    text-align: center;
-    padding: 40px;
-    color: #555;
-    font-size: 0.85rem;
-    border-top: 1px solid #222;
-}
-
-/* Animation for Scene Changes */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Mobile Adjustments */
-@media (max-width: 600px) {
-    .scene { padding: 25px; }
-    .title-act { font-size: 2rem; }
-}
+#feedback { margin-top: 20px; font-weight: bold; }

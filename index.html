@@ -17,59 +17,59 @@
         <section id="prologue" class="scene">
             <h2 class="scene-title">Act I: The Star-Crossed Scroll</h2>
             <p class="dialogue">
-                The air grew cold as a cowled messenger departed into the fog of Bit-stratford, leaving only the faint scent of ozone and a singular scrap of weathered parchment pinned to the gates. This is no ordinary correspondence; the ink seems to shimmer with a celestial light, yet the words are twisted into a shape no scholar can immediately recognize. 
+                The air grew cold as a cowled messenger departed into the fog of Bit-stratford, leaving only a scrap of weathered parchment pinned to the gates. The ink seems to shimmer with a celestial light, yet the words are twisted into a shape no scholar can recognize. 
             </p>
             <p class="dialogue">
-                "Thirteen times I have turned the wheel," the messenger was heard to whisper, "and thirteen times the truth was masked by the stars." To find your way into the inner sanctum, you must untangle this celestial knot.
+                "Thirteen times I have turned the wheel," the messenger whispered. To find your way into the inner sanctum, you must untangle this celestial knot.
             </p>
             <div class="cipher-box">YAZ{Gb_or_be_abg_gb_or_onfu}</div>
-            <button class="action-button" data-target="act1">Cross the Threshold</button>
+            <div class="input-area">
+                <input type="text" id="input-act1" placeholder="Decipher the scroll...">
+                <button class="action-button" onclick="solveAct1()">Submit Revelation</button>
+            </div>
+            <button id="next-act1" class="action-button next-btn hidden" onclick="showNext('prologue', 'act1')">Cross the Threshold</button>
         </section>
 
         <section id="act1" class="scene hidden">
             <h2 class="scene-title">Act II: The Sentinel’s Logic</h2>
             <p class="dialogue">
-                Beyond the gates lies the Vault of Archives, a place where the history of the realm is stored in silent, iron-bound ledgers. Standing before the final door is the Sentinel—a figure of stone and shadow who has not blinked in a century. He does not seek a key of brass, nor a word of power spoken aloud. 
+                Beyond the gates lies the Vault of Archives. Standing before the final door is the Sentinel—a figure of shadow who does not seek a key of brass, but a word of power. 
             </p>
             <p class="dialogue">
-                "The archive only opens for the Absolute," he intones, his voice like grinding tectonic plates. "Present a truth that cannot be denied, a logic so fundamental that it bypasses the very concept of a lock. Provide an identity that is, by its own nature, always valid."
+                "The archive only opens for the Absolute," he intones. "Present a truth so fundamental that it bypasses the very concept of a lock. Provide an identity that is, by its own nature, always valid."
             </p>
-            <div class="login-sim">
+            <div class="input-area">
                 <input type="text" placeholder="Declare your Identity..." id="gatekeeper-user">
-                <input type="password" placeholder="The Silent Passphrase" disabled>
-                <div class="character-spotlight" data-character="gatekeeper">Confront the Sentinel</div>
+                <button class="character-spotlight" onclick="solveAct2()">Challenge the Sentinel</button>
             </div>
-            <button class="action-button" data-target="act2">Proceed to the Gallery</button>
+            <button id="next-act2" class="action-button next-btn hidden" onclick="showNext('act1', 'act2')">Enter the Gallery</button>
         </section>
 
         <section id="act2" class="scene hidden">
             <h2 class="scene-title">Act III: The Stained Portrait</h2>
             <p class="dialogue">
-                You find yourself in the Long Gallery, where the ancestors of the crown watch with judgmental eyes. The center of the hall is dominated by a portrait of Lady Portia. Her gaze is uncanny; it seems to pierce through the physical world and into the digital void. 
+                In the Long Gallery, the portrait of Lady Portia dominates the hall. Legend tells of an alchemist who chose not to hide his discovery behind a painting, but within the very essence of the pigments.
             </p>
             <p class="dialogue">
-                Legend tells of an alchemist who, fearing the theft of his greatest discovery, chose not to hide it behind a painting, but within the very essence of the pigments themselves. To the common observer, it is but oil and canvas; to the Master of Forensics, it is a vessel of hidden properties, containing data that exists only in the margins of its own creation.
+                To the common observer, it is oil and canvas; to the master of forensics, it is a vessel of hidden properties, containing data that exists only in the margins of its own creation.
             </p>
-            <div class="portrait-frame">
-                <div class="character-spotlight" data-character="portia">Search for Hidden Traits</div>
+            <div class="input-area">
+                <input type="text" id="input-act3" placeholder="Enter the Artist's secret...">
+                <button class="character-spotlight" onclick="solveAct3()">Examine the Artistry</button>
             </div>
-            <button class="action-button" data-target="epilogue">Seek the Alchemist</button>
+            <button id="next-act3" class="action-button next-btn hidden" onclick="showNext('act2', 'epilogue')">Seek the Alchemist</button>
         </section>
 
         <section id="epilogue" class="scene hidden">
             <h2 class="scene-title">Act IV: The Alchemist’s Vigor</h2>
             <p class="dialogue">
-                The final scene unfolds in a laboratory lit by the flicker of emerald flames. A cauldron bubbles with a "Binary Potion," its surface reflecting sequences of ones and zeros rather than the face of the onlooker. This is the heart of the mystery, a compiled essence that protects the ultimate secret of the kingdom.
+                The final scene unfolds in a laboratory lit by emerald flames. A cauldron bubbles with a "Binary Potion." Its surface reflects sequences of ones and zeros.
             </p>
             <p class="dialogue">
-                The Alchemist is gone, leaving only his work. To claim the final flag, you must look beyond the bubbling surface. You must deconstruct the potion's structure, unweaving the compiled spells to find the raw strings of reality that remain embedded in its soul.
+                To claim the final flag, you must deconstruct the potion's structure, unweaving the compiled spells to find the raw strings of reality embedded in its soul.
             </p>
-            <div class="character-spotlight" data-character="alchemist">Inspect the Potion's Strings</div>
-            <hr>
             <div class="flag-validator">
-                <h3>The Grand Final Submission</h3>
-                <p class="dialogue source">Deliver the final revelation to bring the play to its close.</p>
-                <input type="text" id="flagInput" placeholder="LNM{Enter_The_Truth}">
+                <input type="text" id="flagInput" placeholder="Final LNM{...} Flag">
                 <button class="action-button" onclick="checkFlag()">Drop the Curtain</button>
                 <p id="feedback"></p>
             </div>
