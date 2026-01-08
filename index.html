@@ -9,74 +9,68 @@
 </head>
 <body>
     <header class="stage-header">
-        <h1 class="title-act">CurtainCall: A Digital Dramaturgy</h1>
-        <p class="subtitle-scene">"All the world's a stage, and all the men and women merely players."</p>
+        <div class="curtain-overlay"></div>
+        <div class="header-content">
+            <h1 class="title-act">CurtainCall: A Digital Dramaturgy</h1>
+            <p class="subtitle-scene">"All the world's a stage, and all the men and women merely players."</p>
+        </div>
     </header>
 
     <main class="main-stage">
         <section id="prologue" class="scene">
             <h2 class="scene-title">Act I: The Star-Crossed Scroll</h2>
-            <p class="dialogue">
-                The air grew cold as a cowled messenger departed into the fog of Bit-stratford, leaving only a scrap of weathered parchment pinned to the gates. The ink seems to shimmer with a celestial light, yet the words are twisted into a shape no scholar can recognize. 
-            </p>
-            <p class="dialogue">
-                "Thirteen times I have turned the wheel," the messenger whispered. To find your way into the inner sanctum, you must untangle this celestial knot.
-            </p>
+            <p class="dialogue">The air grew cold as a cowled messenger departed into the fog, leaving only a scrap of weathered parchment pinned to the gates. The ink shimmers with a celestial light.</p>
             <div class="cipher-box">YAZ{Gb_or_be_abg_gb_or_onfu}</div>
             <div class="input-area">
                 <input type="text" id="input-act1" placeholder="Decipher the scroll...">
-                <button class="action-button" onclick="solveAct1()">Submit Revelation</button>
+                <div class="spotlight-wrapper">
+                    <img src="img/spotlight.png" class="btn-spotlight" alt="">
+                    <button class="action-button" onclick="solveAct1()">Submit Revelation</button>
+                </div>
             </div>
             <button id="next-act1" class="action-button next-btn hidden" onclick="showNext('prologue', 'act1')">Cross the Threshold</button>
         </section>
 
         <section id="act1" class="scene hidden">
             <h2 class="scene-title">Act II: The Sentinel’s Logic</h2>
-            <p class="dialogue">
-                Beyond the gates lies the Vault of Archives. Standing before the final door is the Sentinel—a figure of shadow who does not seek a key of brass, but a word of power. 
-            </p>
-            <p class="dialogue">
-                "The archive only opens for the Absolute," he intones. "Present a truth so fundamental that it bypasses the very concept of a lock. Provide an identity that is, by its own nature, always valid."
-            </p>
+            <p class="dialogue">Standing before the Vault of Archives is the Sentinel. He seeks a truth so fundamental that it bypasses the very concept of a lock.</p>
             <div class="input-area">
                 <input type="text" placeholder="Declare your Identity..." id="gatekeeper-user">
-                <button class="character-spotlight" onclick="solveAct2()">Challenge the Sentinel</button>
+                <div class="spotlight-wrapper">
+                    <img src="img/spotlight.png" class="btn-spotlight" alt="">
+                    <button class="character-spotlight" onclick="solveAct2()">Challenge the Sentinel</button>
+                </div>
             </div>
             <button id="next-act2" class="action-button next-btn hidden" onclick="showNext('act1', 'act2')">Enter the Gallery</button>
         </section>
 
         <section id="act2" class="scene hidden">
             <h2 class="scene-title">Act III: The Stained Portrait</h2>
-            <p class="dialogue">
-                In the Long Gallery, the portrait of Lady Portia dominates the hall. Legend tells of an alchemist who chose not to hide his discovery behind a painting, but within the very essence of the pigments.
-            </p>
-            <p class="dialogue">
-                To the common observer, it is oil and canvas; to the master of forensics, it is a vessel of hidden properties, containing data that exists only in the margins of its own creation.
-            </p>
+            <p class="dialogue">In the Long Gallery, the portrait of Lady Portia dominates the hall. Secrets are hidden within the very margins of its creation.</p>
             <div class="input-area">
                 <input type="text" id="input-act3" placeholder="Enter the Artist's secret...">
-                <button class="character-spotlight" onclick="solveAct3()">Examine the Artistry</button>
+                <div class="spotlight-wrapper">
+                    <img src="img/spotlight.png" class="btn-spotlight" alt="">
+                    <button class="character-spotlight" onclick="solveAct3()">Examine the Artistry</button>
+                </div>
             </div>
             <button id="next-act3" class="action-button next-btn hidden" onclick="showNext('act2', 'epilogue')">Seek the Alchemist</button>
         </section>
 
         <section id="epilogue" class="scene hidden">
             <h2 class="scene-title">Act IV: The Alchemist’s Vigor</h2>
-            <p class="dialogue">
-                The final scene unfolds in a laboratory lit by emerald flames. A cauldron bubbles with a "Binary Potion." Its surface reflects sequences of ones and zeros.
-            </p>
-            <p class="dialogue">
-                To claim the final flag, you must deconstruct the potion's structure, unweaving the compiled spells to find the raw strings of reality embedded in its soul.
-            </p>
+            <p class="dialogue">A cauldron bubbles with a "Binary Potion." Unweave the compiled spells to find the raw strings of reality.</p>
             <div class="flag-validator">
                 <input type="text" id="flagInput" placeholder="Final LNM{...} Flag">
-                <button class="action-button" onclick="checkFlag()">Drop the Curtain</button>
+                <div class="spotlight-wrapper">
+                    <img src="img/spotlight.png" class="btn-spotlight" alt="">
+                    <button class="action-button" onclick="checkFlag()">Drop the Curtain</button>
+                </div>
                 <p id="feedback"></p>
             </div>
         </section>
     </main>
 
-   
     <script src="js/script.js"></script>
 </body>
 </html>
